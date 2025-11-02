@@ -270,7 +270,7 @@ const ZoneDetailModal = ({ zone, open, onOpenChange }: ZoneDetailModalProps) => 
           </div>
 
           {/* Estatísticas */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="rounded-lg border bg-card p-4">
               <p className="text-sm text-muted-foreground">Imóveis Afetados</p>
               <p className="text-3xl font-bold">{residences}</p>
@@ -418,7 +418,7 @@ const ZoneDetailModal = ({ zone, open, onOpenChange }: ZoneDetailModalProps) => 
                 Metodologia
               </Button>
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Custo Desastre */}
               <div className="rounded-lg border-2 border-red-500 bg-red-50 p-4">
                 <h4 className="font-bold text-red-700 mb-2">💥 Custo do Desastre</h4>
@@ -464,7 +464,7 @@ const ZoneDetailModal = ({ zone, open, onOpenChange }: ZoneDetailModalProps) => 
 
       {/* Diálogo de Metodologia Financeira */}
       <AlertDialog open={showFinancialInfo} onOpenChange={setShowFinancialInfo}>
-        <AlertDialogContent className="max-w-3xl max-h-[80vh] overflow-y-auto">
+        <AlertDialogContent className="w-[96vw] sm:max-w-3xl max-h-[85dvh] overflow-y-auto p-4">
           <AlertDialogHeader>
             <AlertDialogTitle className="text-2xl">📊 Metodologia de Cálculo Financeiro</AlertDialogTitle>
             <AlertDialogDescription className="text-base">
