@@ -3,7 +3,7 @@
  * Integra com o backend FastAPI existente
  */
 
-const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8000';
+import { BASE_URL } from '../lib/api';
 
 export interface PhotoAnalysisResult {
   photoId: number;
@@ -27,7 +27,7 @@ export async function createPreventionProcess(zoneId: number, context?: any): Pr
     formData.append('context', JSON.stringify(context));
   }
 
-  const response = await fetch(`${BACKEND_URL}/processos/prevencao`, {
+  const response = await fetch(`${BASE_URL}/processos/prevencao`, {
     method: 'POST',
     body: formData,
   });
@@ -52,7 +52,7 @@ export async function uploadAndAnalyzePhotos(
     formData.append('files', file);
   });
 
-  const response = await fetch(`${BACKEND_URL}/processos/prevencao/${processId}/fotos`, {
+  const response = await fetch(`${BASE_URL}/processos/prevencao/${processId}/fotos`, {
     method: 'POST',
     body: formData,
   });

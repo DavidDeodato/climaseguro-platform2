@@ -1,11 +1,13 @@
 // API client centralizado
 
-let RAW_BASE = (import.meta as any).env?.ENDPOINT_BACKEND ?? (import.meta as any).env?.VITE_ENDPOINT_BACKEND ?? "http://localhost:3002";
+let RAW_BASE = (import.meta as any).env?.ENDPOINT_BACKEND
+  ?? (import.meta as any).env?.VITE_ENDPOINT_BACKEND
+  ?? (typeof window !== "undefined" ? window.location.origin : "");
 // Normaliza para http em localhost caso variável venha com https sem certificado válido
 if (typeof RAW_BASE === "string" && RAW_BASE.startsWith("https://localhost")) {
   RAW_BASE = RAW_BASE.replace("https://", "http://");
 }
-const BASE_URL = RAW_BASE;
+export const BASE_URL = RAW_BASE;
 
 async function http<T>(path: string, init?: RequestInit): Promise<T> {
   const res = await fetch(`${BASE_URL}${path}`, init);

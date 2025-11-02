@@ -3,6 +3,7 @@
  * Usa Google Maps Static API ou ArcGIS para obter imagem da área
  */
 
+import { BASE_URL } from '../lib/api';
 interface CaptureOptions {
   lat: number;
   lon: number;
@@ -100,7 +101,7 @@ export async function captureAndAnalyzeZone(
   console.log(`📸 Imagem capturada: ${imageBlob.size} bytes`);
   
   // 2. Enviar para análise do Gemini
-  const response = await fetch('http://localhost:8000/api/gemini/analyze-residence', {
+  const response = await fetch(`${BASE_URL}/api/gemini/analyze-residence`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
