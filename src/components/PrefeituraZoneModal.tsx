@@ -71,7 +71,7 @@ const PrefeituraZoneModal = ({ zone, open, onOpenChange }: PrefeituraZoneModalPr
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-3xl max-h-[80vh] overflow-y-auto z-[9999]">
+      <DialogContent className="w-[96vw] sm:max-w-3xl max-h-[85dvh] overflow-y-auto z-[9999] p-4">
         <DialogHeader>
           <DialogTitle className="text-2xl">
             Zona {zoneId} - {zoneLevel}
@@ -155,7 +155,7 @@ const PrefeituraZoneModal = ({ zone, open, onOpenChange }: PrefeituraZoneModalPr
 
           {/* Informações da Zona */}
           <Card className="p-4 bg-muted/50">
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <p className="text-sm text-muted-foreground">Imóveis em Risco</p>
                 <p className="text-2xl font-bold">{totalImoveis}</p>
