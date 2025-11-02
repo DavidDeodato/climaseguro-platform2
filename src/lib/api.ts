@@ -2,7 +2,7 @@
 
 let RAW_BASE = (import.meta as any).env?.ENDPOINT_BACKEND
   ?? (import.meta as any).env?.VITE_ENDPOINT_BACKEND
-  ?? (typeof window !== "undefined" ? window.location.origin : "");
+  ?? "https://backend23-c6a8.onrender.com";
 // Normaliza para http em localhost caso variável venha com https sem certificado válido
 if (typeof RAW_BASE === "string" && RAW_BASE.startsWith("https://localhost")) {
   RAW_BASE = RAW_BASE.replace("https://", "http://");
