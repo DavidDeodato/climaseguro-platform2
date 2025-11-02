@@ -198,7 +198,7 @@ const ZoneDetailModal = ({ zone, open, onOpenChange }: ZoneDetailModalProps) => 
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto z-[9999]">
+      <DialogContent className="w-[96vw] sm:max-w-2xl max-h-[85dvh] overflow-y-auto z-[9999] p-4">
         <DialogHeader>
           <DialogTitle className="text-2xl">
             Zona {zone.id} - {zone.level}
